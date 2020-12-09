@@ -19,7 +19,7 @@ ReactDOM.render(
       <Router>
         <App />
       </Router>
-    </Provider>,
+    </Provider>
   </StrictMode>,
   document.getElementById('root')
 )
