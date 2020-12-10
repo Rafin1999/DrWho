@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom'
 
 import { tempAction } from '../../store/actions'
 
+import NavBar from '../../component/module/navBar/navBar'
+
 class Home extends Component {
   componentDidMount() {
     this.props.fetchTemp()
@@ -15,20 +17,15 @@ class Home extends Component {
 
     return (
       <Fragment>
-        SETUP
         {/* <Container> */}
-          {/* <NavBar
-            navigations={[
-              { link: '/temp', name: 'Temp', icon: 'temp' },
-            ]}
-          /> */}
-          {/* <Main> */}
-              {/* <Card> */}
-                <Switch>
-                  <Route path='/temp' component={temp} key={0} />
-                </Switch>
-              {/* </Card> */}
-          {/* </Main> */}
+        <NavBar navigations={[ { link: '/temp', name: 'Temp', icon: 'temp' } ]} />
+        {/* <Main> */}
+        {/* <Card> */}
+        <Switch>
+          <Route path='/temp' component={temp} key={0} />
+        </Switch>
+        {/* </Card> */}
+        {/* </Main> */}
         {/* </Container> */}
       </Fragment>
     )
@@ -36,10 +33,10 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  temp   : state.temp,
+  temp : state.temp,
 })
 const mapDispatchToProps = dispatch => ({
-  fetchTemp   : payload => dispatch(tempAction.send.fetch(payload)),
+  fetchTemp : payload => dispatch(tempAction.send.fetch(payload)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
