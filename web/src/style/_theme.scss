@@ -1,0 +1,86 @@
+// Colour Pallete
+
+$primary-50: #ffeeeb;
+$primary-100: #e8b3a9;
+$primary-200: #e57b66;
+$primary-300: #c95f49;
+$primary-400: #cf482c;
+$primary-500: #e24828;
+
+$secondary-50: #e3edf2;
+$secondary-100: #a7d3e9;
+$secondary-200: #52a2d8;
+$secondary-300: #4788c9;
+$secondary-400: #1b61b1;
+$secondary-500: #144c8b;
+
+$greyscale-50: #ffffff;
+$greyscale-100: #f8f8f8;
+$greyscale-200: #e1e1e1;
+$greyscale-300: #b1b1b1;
+$greyscale-400: #414141;
+$greyscale-500: #101010;
+$greyscale-600: #0c0c0c;
+$greyscale-700: #000000;
+
+// Size
+
+@mixin FontSize ($dp) {
+  @if $dp == 0 {
+    font-size: 1.1rem;
+  } @else if $dp == 1 {
+    font-size: 1.4rem;
+  } @else if $dp == 2 {
+    font-size: 1.6rem;
+  } @else if $dp == 3 {
+    font-size: 1.8rem;
+  } @else if $dp == 4 {
+    font-size: 2rem;
+  } @else if $dp == 6 {
+    font-size: 2.4rem;
+  } @else if $dp == 8 {
+    font-size: 2.8rem;
+  } @else if $dp == 9 {
+    font-size: 3rem;
+  } @else if $dp == 12 {
+    font-size: 3.6rem;
+  } @else if $dp == 16 {
+    font-size: 4rem;
+  } @else if $dp == 24 {
+    font-size: 5rem;
+  } @else {
+    @error 'Invalid argument for $dp: ' + $dp + ', look at the method definition for possible values';
+  }
+}
+
+// Elevation
+
+@mixin BoxShadow ($dp) {
+  @if $dp == 0 {
+    box-shadow: none;
+  } @else if $dp == 1 {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12), 0 1px 3px 0 rgba(0, 0, 0, .20);
+  } @else if $dp == 2 {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .20);
+  } @else if $dp == 3 {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .12), 0 1px 8px 0 rgba(0, 0, 0, .20);
+  } @else if $dp == 4 {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .20);
+  } @else if $dp == 6 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .20);
+  } @else if $dp == 8 {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .20);
+  } @else if $dp == 9 {
+    box-shadow: 0 9px 12px 1px rgba(0, 0, 0, .14), 0 3px 16px 2px rgba(0, 0, 0, .12), 0 5px 6px -3px rgba(0, 0, 0, .20);
+  } @else if $dp == 12 {
+    box-shadow: 0 12px 17px 2px rgba(0, 0, 0, .14), 0 5px 22px 4px rgba(0, 0, 0, .12), 0 7px 8px -4px rgba(0, 0, 0, .20);
+  } @else if $dp == 16 {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12),
+      0 8px 10px -5px rgba(0, 0, 0, .20);
+  } @else if $dp == 24 {
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12),
+      0 11px 15px -7px rgba(0, 0, 0, .20);
+  } @else {
+    @error 'Invalid argument for $dp: ' + $dp + ', look at the method definition for possible values';
+  }
+}

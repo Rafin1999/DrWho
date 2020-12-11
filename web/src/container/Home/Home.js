@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
-
 import { tempAction } from '../../store/actions'
+
+import Search from '../Search/Search'
 
 import NavBar from '../../component/module/navBar/navBar'
 
@@ -17,16 +18,34 @@ class Home extends Component {
 
     return (
       <Fragment>
-        {/* <Container> */}
-        <NavBar navigations={[ { link: '/temp', name: 'Temp', icon: 'temp' } ]} />
-        {/* <Main> */}
-        {/* <Card> */}
-        <Switch>
-          <Route path='/temp' component={temp} key={0} />
-        </Switch>
-        {/* </Card> */}
-        {/* </Main> */}
-        {/* </Container> */}
+        <section className='header'>
+          <div className='logo'>Dr WHO</div>
+          <div className='btn-container'>
+            <div>logout</div>
+            <div>not</div>
+            <div>pro</div>
+          </div>
+        </section>
+        <div class='grid grid-col-1-4'>
+          <section style={{ marginLeft: 'auto' }} className='aside'>
+            <NavBar
+              navigations={[
+                { link: '/search', name: 'Search', icon: 'person_search' },
+                { link: '/appointments', name: 'Appointments', icon: 'today' },
+                { link: '/medical-profile', name: 'Medical Profile', icon: 'contact_page' },
+                { link: '/reviews', name: 'Reviews', icon: 'rate_review' },
+              ]}
+            />
+            {/* <Switch>
+            <Route path='/temp' component={temp} key={0} />
+          </Switch> */}
+          </section>
+          <section>
+            <Switch>
+              <Route path='/search' component={Search} />
+            </Switch>
+          </section>
+        </div>
       </Fragment>
     )
   }
