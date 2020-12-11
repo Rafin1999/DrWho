@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 import { tempAction } from '../../store/actions'
 
-import NavBar from '../../component/module/navBar/navBar'
+import Input from '../../component/element/form/input'
+import Password from '../../component/element/form/password'
 
 class Search extends Component {
   componentDidMount() {
@@ -24,6 +25,29 @@ class Search extends Component {
               </div>
               <input className='search__input' placeholder='Search for...' />
             </div>
+            <form>
+              <Input type='text' label='label' placeholder='i.e. Whatever' icon='home' value='aaa' />
+              <formGroup>
+                <Input label='label' placeholder='i.e. Whatever' icon='home' value='aaa' />
+                <Password label='label' placeholder='i.e. Whatever' icon='home' value='aaa' />
+              </formGroup>
+              <label className='lebel-checkbox'>
+                <input type='checkbox' />
+                <x-text>Title</x-text>
+              </label>
+              <label className='lebel-radio'>
+                <input type='radio' name='a' />
+                <x-text>Title</x-text>
+              </label>
+              <label className='lebel-radio'>
+                <input type='radio' name='a' />
+                <x-text>Title</x-text>
+              </label>
+              <label className='lebel-radio'>
+                <input type='radio' name='a' />
+                <x-text>Title</x-text>
+              </label>
+            </form>
           </section>
           <section className='aside'>Location</section>
         </div>

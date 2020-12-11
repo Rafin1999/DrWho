@@ -1,0 +1,152 @@
+@import './theme';
+form {
+  display: inline-flex;
+  flex-direction: column;
+
+  formGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  label.lebel-input {
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+    padding: 0 0.5rem;
+
+    &:active,
+    &:focus-within {
+      .txt,
+      .icon {
+        color: $secondary-400;
+      }
+    }
+
+    .txt {
+      @include FontSize(0);
+      font-weight: 500;
+      color: $greyscale-300;
+      margin-left: 1.5rem;
+      padding-bottom: 0.2rem;
+    }
+    .icon {
+      @include FontSize(4);
+      color: $greyscale-300;
+      margin-top: 2.3rem;
+      margin-left: 1.2rem;
+      position: absolute;
+    }
+    .peek {
+      @include FontSize(4);
+      color: $greyscale-300;
+      align-self: flex-end;
+      margin-top: 2.2rem;
+      margin-right: 0.8rem;
+      position: absolute;
+      z-index: 10;
+      border-radius: 50%;
+      padding: 0.2rem;
+
+      &:hover {
+        color: $greyscale-700;
+        background-color: $greyscale-200;
+      }
+      &:active {
+        color: $secondary-400;
+        background-color: $greyscale-200;
+      }
+    }
+    .input {
+      @include FontSize(2);
+      border: 0.2rem solid $greyscale-200;
+      border-radius: 0.6rem;
+      padding: 0.8rem 1.6rem;
+      color: $greyscale-700;
+      font-weight: 500;
+      outline: none;
+
+      &::placeholder {
+        color: $greyscale-200;
+      }
+
+      &:active,
+      &:focus {
+        color: $secondary-400;
+        border-color: $secondary-400;
+      }
+
+      &-icon {
+        padding-left: 3.5rem;
+      }
+      &-peek {
+        padding-right: 3.5rem;
+      }
+    }
+  }
+  label.lebel-checkbox {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.6rem;
+
+    &:focus-within {
+      .txt {
+        color: $secondary-400;
+      }
+    }
+
+    input {
+      @include FontSize(2);
+      color: $greyscale-700;
+      font-weight: 500;
+      outline: none;
+
+      &::placeholder {
+        color: $greyscale-200;
+      }
+      &:checked + .txt {
+        color: $secondary-400;
+      }
+    }
+    .txt {
+      @include FontSize(2);
+      font-weight: 500;
+      color: $greyscale-700;
+      margin-left: 0.5rem;
+      padding-bottom: 0.2rem;
+    }
+  }
+  label.lebel-radio {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.6rem;
+
+    &:focus-within {
+      .txt {
+        color: $secondary-400;
+      }
+    }
+
+    input {
+      @include FontSize(2);
+      color: $greyscale-700;
+      font-weight: 500;
+      outline: none;
+
+      &::placeholder {
+        color: $greyscale-200;
+      }
+
+      &:checked + .txt {
+        color: $secondary-400;
+      }
+    }
+    .txt {
+      @include FontSize(2);
+      font-weight: 500;
+      color: $greyscale-700;
+      margin-left: 0.5rem;
+      padding-bottom: 0.2rem;
+    }
+  }
+}

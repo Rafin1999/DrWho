@@ -27,7 +27,7 @@ $greyscale-700: #000000;
 
 @mixin FontSize ($dp) {
   @if $dp == 0 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   } @else if $dp == 1 {
     font-size: 1.4rem;
   } @else if $dp == 2 {
