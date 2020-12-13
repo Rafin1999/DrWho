@@ -10,9 +10,184 @@ class Search extends Component {
   componentDidMount() {
     this.props.fetchTemp()
   }
-  state = {}
+  state = {
+    result : [
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification qualification qualification vvv qualificationvqualificationqualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'ad lkasjd djoi jdiajdij adia djadjda',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification dad adj nbbba asd',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+      {
+        id            : '1212',
+        avatar        : '',
+        name          : 'name',
+        specialised   : 'specialised',
+        qualification : 'qualification',
+        location      : 'location',
+        rating        : '',
+      },
+    ],
+  }
 
   render() {
+    const { result } = this.state
     const { temp } = this.props
 
     return (
@@ -25,7 +200,35 @@ class Search extends Component {
               </div>
               <input className='search__input' placeholder='Search for...' />
             </div>
-            <form>
+            <div className='card-container' style={{ backgroundColor: 'red' }}>
+              {result.map(({ id, avatar, name, specialised, qualification, location, rating }) => (
+                <div class='card result' key={id}>
+                  <div className='flex flex-d-row flex-pos-between'>
+                    {/* <img src={avatar} /> */}
+                    <div>IMG</div>
+                    <div className='p-left-2'>
+                      <h3>{name}</h3>
+                      <h5>{specialised}</h5>
+                    </div>
+                  </div>
+                  <div className='p-top-2'>
+                    <h5>Qualification</h5>
+                    <p>{qualification}</p>
+                  </div>
+                  <div className='flex'>
+                    <div>
+                      <h5>Location</h5>
+                      <p>{location}</p>
+                    </div>
+                    <div>
+                      <h5>Rating</h5>
+                      <p>{rating}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* <form>
               <Input type='text' label='label' placeholder='i.e. Whatever' icon='home' value='aaa' />
               <formGroup>
                 <Input label='label' placeholder='i.e. Whatever' icon='home' value='aaa' />
@@ -47,7 +250,7 @@ class Search extends Component {
                 <input type='radio' name='a' />
                 <x-text>Title</x-text>
               </label>
-            </form>
+            </form> */}
           </section>
           <section className='aside'>Location</section>
         </div>
