@@ -1,0 +1,129 @@
+@import './theme';
+
+.container {
+  background-color: blue;
+
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $greyscale-50;
+  padding: 0 2.4rem;
+  height: 4.6rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  @include BoxShadow(1);
+
+  .logo {
+    color: $primary-400;
+    font-family: 'Raleway', sans-serif;
+    @include FontSize(3);
+    font-weight: 800;
+  }
+  .btn-container {
+    display: flex;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem 1.2rem;
+  position: sticky;
+  top: 4.6rem;
+  z-index: 10;
+
+  &__btn {
+    @include FontSize(2);
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    margin-bottom: 0.3rem;
+    color: $greyscale-300;
+
+    &.active {
+      color: $greyscale-600;
+
+      &:before {
+        content: '';
+        background-color: $primary-500;
+        border-radius: 50%;
+        width: 0.8rem;
+        height: 0.8rem;
+        box-shadow: 0 0.1rem 0.2rem transparentize($color: $primary-500, $amount: 0.2),
+          0 0 0.4rem transparentize($color: $primary-500, $amount: 0.6);
+
+        position: absolute;
+        margin-left: -2.4rem;
+        z-index: 2;
+      }
+    }
+    &__text {
+      @include FontSize(1);
+      letter-spacing: 0.08rem;
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+    .material-icons {
+      @include FontSize(8);
+    }
+  }
+}
+.card {
+  background-color: $greyscale-50;
+  margin: 0.8rem;
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  @include BoxShadow(2);
+}
+.search {
+  padding: 1rem 2rem;
+  width: calc(100% - 4rem);
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  color: $greyscale-300;
+  &__icon {
+    position: absolute;
+    margin-left: 3rem;
+    .material-icons {
+      @include FontSize(6);
+      font-weight: bold;
+    }
+  }
+  &__input {
+    padding: 1rem 2rem;
+    width: calc(100% - 4rem);
+    margin: 2rem;
+    padding-left: 4.5rem;
+    @include FontSize(8);
+    color: $greyscale-700;
+    letter-spacing: 0.05rem;
+    outline: none;
+    border-width: 0 0 0.2rem 0;
+    border-color: $greyscale-300;
+    background-color: transparent;
+    &::placeholder {
+      color: $greyscale-300;
+    }
+  }
+}
+.result {
+  // padding:
+}
+.card-container {
+  // display: flex;
+  // justify-content: flex-start;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 15rem);
+}
