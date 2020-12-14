@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import { tempAction } from '../../store/actions'
 
 import Search from '../Search/Search'
+import Appointment from '../Appointment/Appointment'
 
 import NavBar from '../../component/module/navBar/navBar'
 
@@ -26,7 +27,7 @@ class Home extends Component {
             <div>pro</div>
           </div>
         </section>
-        <div class='grid grid-col-1-4'>
+        <div class='home grid grid-col-1-5'>
           <section style={{ marginLeft: 'auto' }} className='aside'>
             <NavBar
               navigations={[
@@ -40,9 +41,10 @@ class Home extends Component {
             <Route path='/temp' component={temp} key={0} />
           </Switch> */}
           </section>
-          <section>
+          <section className='scrollable'>
             <Switch>
               <Route path='/search' component={Search} />
+              <Route path='/appointments' component={Appointment} />
             </Switch>
           </section>
         </div>
